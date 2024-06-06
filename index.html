@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math333</title>
+</head>
+<body>
+    <form>
+        <label for="num1">Число 1:</label><br>
+        <input type="number" id="num1" name="num1"><br>
+        <label for="num2">Число 2:</label><br>
+        <input type="number" id="num2" name="num2"><br>
+        <label for="result">Результат:</label><br>
+        <input type="text" id="result" name="result" readonly><br>
+        <input type="button" value="Обчислити" onclick="calculateSum()">
+      </form>
+      
+      <script>
+        const num1Input = document.getElementById('num1');
+        const num2Input = document.getElementById('num2');
+        const resultInput = document.getElementById('result');
+        function calculateSum() {
+          const num1 = parseFloat(num1Input.value);
+          const num2 = parseFloat(num2Input.value);
+          if (isNaN(num1) || isNaN(num2)) {
+            alert('Будь ласка, введіть числові значення.');
+            return;
+          }
+          const sum = num1 + num2;
+          resultInput.value = sum;
+          alert('Сума: ' + sum);
+        }
+      </script>
+</body>
+</html>
